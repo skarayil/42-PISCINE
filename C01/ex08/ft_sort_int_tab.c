@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skarayil <skarayil@student.42kocaeli.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/20 12:45:12 by skarayil          #+#    #+#             */
+/*   Updated: 2025/02/20 14:22:04 by skarayil         ###   ########.tr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	change;
+	int	i;
+	int	temp;
+
+	if (size <= 1)
+		return ;
+	change = 1;
+	i = 0;
+	while (change)
+	{
+		change = 0;
+		i = 0;
+		while (i < size - 1)
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				temp = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = temp;
+				change = 1;
+			}
+			i++;
+		}
+	}
+}
